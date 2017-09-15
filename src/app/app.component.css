@@ -127,7 +127,7 @@ jaspero-select>div{
   position: relative;
 }
 
-span.chip, [_nghost-c1] .chip[_ngcontent-c1] {
+span.chip{
   height: 27px;
   padding: 0 10px;
   display: inline-block;

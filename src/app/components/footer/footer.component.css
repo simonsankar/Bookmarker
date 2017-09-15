@@ -1,8 +1,8 @@
 .footer{
   background: #333;
   color: #ddd;  
-  padding-top: 15px;
-  padding-bottom: -5px; 
+  padding-top: 0px;
+  padding-bottom: 0px; 
   margin-top: 40px;
   margin-bottom: 0px; 
   margin-right: 0px;
@@ -14,6 +14,20 @@
   left: 0;
   font-family: 'Futura Light';
 }
-.footer a,.footer h5{
-  color: #ddd;  
+.navbar-nav>li> a{
+ color: #ddd;
+}
+.navbar-nav>li>a:hover {
+  border: 1px solid #ddd;
+  background-color: transparent;
+  color: #ddd;
+}
+.navbar-nav>li>a:active{
+  color: #eed641;
+  border: 1px solid #eed641;
+  background-color: transparent;
+}
+.navbar-nav>li>a:focus{
+  color: #eed641;
+  background-color: transparent;
 }

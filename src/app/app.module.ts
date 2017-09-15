@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { JasperoChipsModule } from '@jaspero/ng2-chips';
 import { SelectModule } from 'ng2-select';
 import { ModalModule } from 'ngx-modal';
+import { NgSpinKitModule } from 'ng-spin-kit';
 
 import { FirebaseService } from './services/firebase.service';
 import { AuthService } from './services/auth.service';
@@ -19,7 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +31,7 @@ import { FooterComponent } from './components/footer/footer.component';
     JasperoChipsModule,
     SelectModule,
     ModalModule,
+    NgSpinKitModule,
   ],
   providers: [FirebaseService,AuthService],
   bootstrap: [AppComponent]

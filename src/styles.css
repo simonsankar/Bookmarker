@@ -18,12 +18,14 @@
   font-family: 'Futura Book';
   src: url('./assets/fonts/Futura Book.ttf') format('truetype');
 }
-
+html{
+  min-height:100%
+}
 body{
   font-family: 'Futura LT';
   background-color: #FFFFFF;
   background-image: url('./assets/images/bg2.jpg');
-  /* background-repeat: repeat-y; */
+  background-repeat: repeat;
   background-size: contain;
   position: relative;
   margin: 0;

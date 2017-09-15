@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
 
   // Searchbar         
   tagsList = [];
+  none = true;
 
   //User
   user = {
@@ -60,7 +61,8 @@ export class AppComponent implements OnInit {
       });
       this.tagsList.sort();
       console.log(this.tagsList);
-      
+      if(bookmarks.length > 0)
+      this.none = false;
     });
   }
 
@@ -140,6 +142,7 @@ export class AppComponent implements OnInit {
   }
  
   refreshValue(value:any):void {
+    this.none = true;
     console.log('Refreshed',value);
     this.firebaseService.getBookmarks().subscribe(bookmarks =>{ 
       this.bookmarks = bookmarks.filter(b => { //This might be horrible code
@@ -151,6 +154,9 @@ export class AppComponent implements OnInit {
         if(matches == value.length)
           return b;
       }).sort(b => b.date).reverse();
+      if(this.bookmarks.length > 0)
+        this.none = true;
+      else this.none = false;
     });
   }
 
