@@ -1,13 +1,34 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { trigger, style, transition, animate, group } from '@angular/animations';
+
 import { FirebaseService } from './services/firebase.service';
 import { AuthService } from './services/auth.service';
 import { ChipsComponent } from '@jaspero/ng2-chips';
 import { ModalModule, Modal } from 'ngx-modal';
 import { FooterComponent } from './components/footer/footer.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('itemAnim', [
+      transition(':enter', [
+        style({transform: 'translateX(-100%)'}),
+        animate(50)
+      ]),
+      transition(':leave', [
+        group([
+          animate('0.2s ease', style({
+            transform: 'translate(150px,0px)'
+          })),
+          animate('0.1s 0.2s ease', style({
+            opacity: 0
+          }))
+        ])
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'BOOKMARKER';

@@ -23,10 +23,11 @@ html{
 }
 body{
   font-family: 'Futura LT';
-  background-color: #FFFFFF;
+  background-color: #c9c2bc;
   background-image: url('./assets/images/bg2.jpg');
-  background-repeat: repeat;
+  background-repeat: repeat-y;
   background-size: contain;
+  background-position: top center;
   position: relative;
   margin: 0;
   padding-bottom: 30rem; 
