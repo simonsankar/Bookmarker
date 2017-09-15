@@ -1,0 +1,156 @@
+.navbar{
+  font-family: 'Futura Light';
+}
+.jumbotron h1{
+  font-family: 'Futura Heavy';
+}
+.navbar, .jumbotron {
+  background: transparent;
+  border: 0px;
+}
+.jumbotron {
+  border-bottom: 2px solid #EED641;
+  padding-top: 10px;
+  padding-bottom: 35px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Hovers */
+.navbar-nav>li>a,  .navbar-brand{
+  color: #333;
+}
+.navbar-brand:hover {
+  color: #EED641;
+}
+.navbar-brand:active {
+  color: #D4C146;
+}
+
+.navbar-nav>li>a:hover {
+  color: #EED641;
+  border: 1px solid #ddd;
+}
+.navbar-nav>li>a>span:hover, .navbar-brand>span:hover {
+  color: #EED641;
+  text-decoration: none;
+}
+a>h2>small :hover{
+  text-decoration-line: none;
+}
+
+
+
+
+/* Text */
+h1 {
+  text-shadow: -3px 4px #edece7, -6px 7px #EED641;
+}
+h2 {
+  font-family: 'Futura LT';
+}
+.desc {
+  font-family: 'Futura LT';
+}
+.date {
+  font-family: 'Futura Light';
+}
+
+/* Button */
+.btn-vault {
+  background-color: #EED641;
+}
+.btn-vault:hover{
+  background-color: #DFCC4E;
+}
+.btn-vault:active{
+  background-color: #D1BC37;
+}
+
+.btn, label {
+  font-family: "Futura LT";
+}
+
+/* Addon */
+.input-group-addon {
+  background-color:transparent;
+  color: #EED641;
+}
+/* List */
+.panel-default{
+  background-color: rgba(255, 255, 255, 0.30);
+  border: 1px solid #ddd;
+  border-radius: 0px;
+}
+
+/* Panel */
+.panel-vault{
+  border-color: #EED641;
+}
+.panel-vault>.panel-footer {
+  padding-top: 0px;
+  padding-left: 29px;
+  border: none;
+}
+/* Label */
+.label-vault {
+  background-color: #EED641;
+  color: black;
+  padding: 4px;  
+}
+/* HR */
+.header-hr{
+  border: 0px;
+  margin: 25px 0;
+  height: 2px;
+  background: #333;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#edece7), to(#edece7), color-stop(50%, #333));
+}
+
+/* Jaspero */
+jaspero-chips{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+jaspero-select>div{
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  outline: none;
+  background: whitesmoke;
+  width: 100%;
+  padding: 0 10px;
+  line-height: 40px;
+  height: 40px;
+  position: relative;
+}
+
+span.chip, [_nghost-c1] .chip[_ngcontent-c1] {
+  height: 27px;
+  padding: 0 10px;
+  display: inline-block;
+  border-radius: 32px;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+  font-size: 11px;
+  line-height: 27px;
+  white-space: nowrap;
+  position: relative;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  background-color: #EED641;
+  color: black;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+a>.dropdown-item{
+  background-color: #EED641;
+  color: #fff;
+}
+
+.ui-select-choices-row.active[_ngcontent-c1] > a[_ngcontent-c1] {
+  background-color: #EED641;
+  color: #fff;
+}

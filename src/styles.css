@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Futura LT';
+  src: url('./assets/fonts/FuturaLT.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura Heavy';
+  src: url('./assets/fonts/FuturaLT-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura Light';
+  src: url('./assets/fonts/FuturaLT-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura Book';
+  src: url('./assets/fonts/Futura Book.ttf') format('truetype');
+}
+
+body{
+  font-family: 'Futura LT';
+  background-color: #FFFFFF;
+  background-image: url('./assets/images/bg2.jpg');
+  /* background-repeat: repeat-y; */
+  background-size: contain;
+  position: relative;
+  margin: 0;
+  padding-bottom: 30rem; 
+  min-height: 100%;
+}
+
+a {
+  color:#555;
+}
+a :hover{
+  color:#444;
+  text-decoration: underline;
+  text-decoration-color: #444;
+}
+a:focus, a:visited{
+  color:#333;
+  text-decoration: underline;
+  text-decoration-color: #333;
+}
+
+
