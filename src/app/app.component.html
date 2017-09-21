@@ -95,7 +95,7 @@
   </div>
   <!-- Bookmarks -->
   <div *ngIf="bookmarks.length != 0" class="row">
-    <div *ngFor="let b of bookmarks" class="panel panel-default" [@itemAnim]>
+    <div *ngFor="let b of bookmarks" class="panel panel-default">
       <div class="panel-body">
         <span *ngIf="b.date == today" class="pull-right label label-vault">New!</span>
         <a href="{{b.url}}" target="_blank">

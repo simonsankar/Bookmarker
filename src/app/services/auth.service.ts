@@ -23,9 +23,11 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Nice, it worked!');
+        return true;
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
+        return false;
       });
   }
 

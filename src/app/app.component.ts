@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { trigger, style, transition, animate, group } from '@angular/animations';
+import * as _ from 'lodash';
 
 import { FirebaseService } from './services/firebase.service';
 import { AuthService } from './services/auth.service';
@@ -10,25 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [
-    trigger('itemAnim', [
-      transition(':enter', [
-        style({transform: 'translateX(-100%)'}),
-        animate(50)
-      ]),
-      transition(':leave', [
-        group([
-          animate('0.2s ease', style({
-            transform: 'translate(150px,0px)'
-          })),
-          animate('0.1s 0.2s ease', style({
-            opacity: 0
-          }))
-        ])
-      ])
-    ])
-  ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   title = 'BOOKMARKER';
@@ -41,7 +23,8 @@ export class AppComponent implements OnInit {
     title:'',
     description:'',
     tags:this.tags,
-    date: ''
+    date: '',
+    timeAdded: 0
   }
   //Indicators
   inputTitle = '';
@@ -65,10 +48,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     let d = new Date;
     this.today = d.toDateString();
-    console.log(this.today);
+    console.log(this.today,d.getTime());
     
     this.firebaseService.getBookmarks().subscribe(bookmarks => {
-      bookmarks.sort(b => b.date).reverse();
+      bookmarks = _.orderBy(bookmarks,'timeAdded','desc');
       this.bookmarks = bookmarks;
       console.log(this.bookmarks);
 
@@ -98,6 +81,7 @@ export class AppComponent implements OnInit {
   addBookmark() {
     let d = new Date;
     this.bookmark.date = d.toDateString();
+    this.bookmark.timeAdded = d.getTime()
     if(!this.validate()) {
       console.log('Adding:',this.bookmark);
       console.log('Added!');
@@ -145,7 +129,8 @@ export class AppComponent implements OnInit {
       title:'',
       description:'',
       tags:this.tags,
-      date: ''
+      date: '',
+      timeAdded:0
     }
     this.inputTitle = '';
     this.inputDescription = '';
@@ -174,9 +159,11 @@ export class AppComponent implements OnInit {
         });
         if(matches == value.length)
           return b;
-      }).sort(b => b.date).reverse();
-      if(this.bookmarks.length > 0)
+      });
+      if(this.bookmarks.length > 0) {
+        this.bookmarks = _.orderBy(this.bookmarks, 'timeAdded','desc');
         this.none = true;
+      }
       else this.none = false;
     });
   }
